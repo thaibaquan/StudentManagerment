@@ -1,4 +1,4 @@
-package com.fullhouse.studentmanagerment.controllers;
+package com.fullhouse.studentmanagerment.controllers.admin;
 
 import com.fullhouse.studentmanagerment.dtos.UserDto;
 import com.fullhouse.studentmanagerment.services.UserService;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor
-public class registerUser {
+public class registerUserController {
     @Autowired
     private UserService userService;
     @ModelAttribute("userdto")

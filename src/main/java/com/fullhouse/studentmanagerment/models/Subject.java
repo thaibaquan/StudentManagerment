@@ -13,16 +13,18 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "subject")
 public class Subject {
     @Id
-    private UUID id;
+    @Column(name = "id", length = 36, nullable = false)
+    private String id = UUID.randomUUID().toString();
 
-    @Column(name = "teacher_id")
-    private char teacherId;
+    @Column(name = "teacher_id", length = 36)
+    private String teacherId;
 
-    @Column(name = "organization_id")
-    private char organizationId;
+    @Column(name = "organization_id", length = 36)
+    private String organizationId;
 
-    @Column(name = "name")
+    @Column(name = "name", length = 255, nullable = false)
     private String name;
 }

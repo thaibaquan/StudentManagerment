@@ -19,10 +19,10 @@ public class Organization {
     private String id = UUID.randomUUID().toString();
 
     @Column(name = "parent_id")
-    private String parentId;
+    private String parentId = UUID.randomUUID().toString();
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "org_type", nullable = false)
+    @Column(name = "org_type")
     private OrganizationType orgType;
 
     @Column(name = "head_of_org", nullable = false)
@@ -30,5 +30,9 @@ public class Organization {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "parent_name")
+    private String parentName;
+
 
 }

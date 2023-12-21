@@ -1,0 +1,1 @@
+ALTER TABLE `organization` ADD COLUMN `parent_name` VARCHAR(255) DEFAULT NULL;

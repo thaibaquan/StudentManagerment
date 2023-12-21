@@ -8,6 +8,7 @@ import com.fullhouse.studentmanagerment.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -29,4 +30,30 @@ public class UserServiceImpl implements UserService {
         if(user == null) return false;
         return true;
     }
+
+    @Override
+    public List<User> findAll() {
+        List<User> userList = userRepository.findAll();
+        return userList;
+    }
+
+    @Override
+    public User findUserByEmail(String email) {
+        User user = userRepository.findUserByEmail(email);
+        return user;
+    }
+
+    @Override
+    public Boolean checkPasswordUser(String email, String password) {
+        User user = userRepository.findUserByEmail(email);
+        if(user.getPassword().equals(password)) return true;
+        return false;
+    }
+
+    @Override
+    public List<User> findUsersWithoutRelations() {
+        List<User> userList = userRepository.findUsersWithoutRelations();
+        return userList;
+    }
+
 }
